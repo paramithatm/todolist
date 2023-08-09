@@ -18,6 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
+                // Guide text
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Swipe to left on the cell to delete an item")
                         .fontWeight(.ultraLight)
@@ -25,35 +26,41 @@ struct ContentView: View {
                         .fontWeight(.ultraLight)
                 }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 
-                List(todos) { todo in
-                    NavigationLink {
-                        AddTodoView(todo: todo, title: todo.title ?? "", desc: todo.desc ?? "", dueDate: todo.dueDate ?? Date())
-                    } label: {
-                        VStack(alignment: .leading) {
-                            Text(todo.title ?? "")
-                                .fontWeight(.bold)
-                            Text(todo.desc ?? "")
-                                .fontWeight(.regular)
-                            Text(todo.dueDate?.formatted(date: .long, time: .shortened) ?? "")
-                                .fontWeight(.thin)
-                        }
-                        .swipeActions {
-                            Button("Delete") {
-                                moc.delete(todo)
-                                try? CoreDataController.shared.container.viewContext.save()
+                if todos.isEmpty {
+                    Text("There's nothing here. Click ➕ on top right corner to add new item")
+                        .padding(EdgeInsets(top: 32, leading: 16, bottom: 0, trailing: 16))
+                    Spacer()
+                } else {
+                    List(todos) { todo in
+                        NavigationLink {
+                            AddTodoView(todo: todo, title: todo.title ?? "", desc: todo.desc ?? "", dueDate: todo.dueDate ?? Date())
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text(todo.title ?? "")
+                                    .fontWeight(.bold)
+                                Text(todo.desc ?? "")
+                                    .fontWeight(.regular)
+                                Text(todo.dueDate?.formatted(date: .long, time: .shortened) ?? "")
+                                    .fontWeight(.thin)
                             }
-                            .tint(.red)
+                            .swipeActions {
+                                Button("Delete") {
+                                    moc.delete(todo)
+                                    try? CoreDataController.shared.container.viewContext.save()
+                                }
+                                .tint(.red)
+                            }
                         }
                     }
                 }
-                .navigationTitle("To Do List")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink {
-                            AddTodoView()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
+            }
+            .navigationTitle("To Do List")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        AddTodoView()
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
             }
