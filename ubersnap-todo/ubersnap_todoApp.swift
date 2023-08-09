@@ -13,7 +13,6 @@ struct ubersnap_todoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AddTodoView()
             ContentView()
                 .environment(\.managedObjectContext, CoreDataController.shared.container.viewContext)
 
