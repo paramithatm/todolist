@@ -11,6 +11,10 @@
 		C24C64B92A823D65000C9300 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64B82A823D65000C9300 /* ContentView.swift */; };
 		C24C64BB2A823D66000C9300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24C64BA2A823D66000C9300 /* Assets.xcassets */; };
 		C24C64BE2A823D66000C9300 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24C64BD2A823D66000C9300 /* Preview Assets.xcassets */; };
+		C24C64C62A82A393000C9300 /* ubsersnap-todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C42A82A393000C9300 /* ubsersnap-todo.xcdatamodeld */; };
+		C24C64C82A82A5DF000C9300 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C72A82A5DF000C9300 /* AddTodoView.swift */; };
+		C24C64CA2A838311000C9300 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C92A838311000C9300 /* CoreDataController.swift */; };
+		C24C64CC2A838714000C9300 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64CB2A838714000C9300 /* TodoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		C24C64B82A823D65000C9300 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C24C64BA2A823D66000C9300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C24C64BD2A823D66000C9300 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C24C64C52A82A393000C9300 /* ubsersnap-todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ubsersnap-todo.xcdatamodel"; sourceTree = "<group>"; };
+		C24C64C72A82A5DF000C9300 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		C24C64C92A838311000C9300 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		C24C64CB2A838714000C9300 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 				C24C64B82A823D65000C9300 /* ContentView.swift */,
 				C24C64BA2A823D66000C9300 /* Assets.xcassets */,
 				C24C64BC2A823D66000C9300 /* Preview Content */,
+				C24C64C42A82A393000C9300 /* ubsersnap-todo.xcdatamodeld */,
+				C24C64C92A838311000C9300 /* CoreDataController.swift */,
+				C24C64C72A82A5DF000C9300 /* AddTodoView.swift */,
+				C24C64CB2A838714000C9300 /* TodoModel.swift */,
 			);
 			path = "ubersnap-todo";
 			sourceTree = "<group>";
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24C64CA2A838311000C9300 /* CoreDataController.swift in Sources */,
 				C24C64B92A823D65000C9300 /* ContentView.swift in Sources */,
+				C24C64C62A82A393000C9300 /* ubsersnap-todo.xcdatamodeld in Sources */,
+				C24C64CC2A838714000C9300 /* TodoModel.swift in Sources */,
+				C24C64C82A82A5DF000C9300 /* AddTodoView.swift in Sources */,
 				C24C64B72A823D65000C9300 /* ubersnap_todoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +355,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C24C64C42A82A393000C9300 /* ubsersnap-todo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C24C64C52A82A393000C9300 /* ubsersnap-todo.xcdatamodel */,
+			);
+			currentVersion = C24C64C52A82A393000C9300 /* ubsersnap-todo.xcdatamodel */;
+			path = "ubsersnap-todo.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C24C64AB2A823D65000C9300 /* Project object */;
 }

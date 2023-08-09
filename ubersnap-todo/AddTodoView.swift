@@ -5,6 +5,7 @@
 //  Created by Paramitha on 08/08/23.
 //
 
+import CoreData
 import SwiftUI
 
 struct AddTodoView: View {
@@ -23,6 +24,14 @@ struct AddTodoView: View {
                     TextField("Desc", text: $desc)
                         .textFieldStyle(.roundedBorder)
                     DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
+                    Button("Submit") {
+                        let testData = Todo(context: CoreDataController.shared.container.viewContext)
+                        testData.title = "Laundry"
+                        testData.desc = "One laundry on Wednesday"
+                        testData.dueDate = Date()
+                        CoreDataController.shared.save()
+                    }
+                    Spacer()
                 }
             }
             .navigationTitle("Add To-Do Item")

@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @Environment(\.managedObjectContext) var moc
+    
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.title),
+        SortDescriptor(\.dueDate, order: .reverse)
+    ]) var todos: FetchedResults<Todo>
+    
     var body: some View {
         NavigationView {
-            List {
-                Text("asdkljasd")
+            List(todos) { todo in
+                Text(todo.title ?? "")
                     .swipeActions {
                         Button("Delete") {
                             print("Boo")
@@ -22,9 +30,6 @@ struct ContentView: View {
                         }
                         .tint(.blue)
                     }
-                Text("asdkljasd")
-                Text("asdkljasd")
-                Text("asdkljasd")
             }
             .navigationTitle("To Do List")
             .toolbar {
@@ -41,5 +46,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+
     }
 }
