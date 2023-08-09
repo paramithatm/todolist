@@ -15,6 +15,8 @@ struct AddTodoView: View {
     @State internal var desc: String = ""
     @State internal var dueDate: Date = Date()
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             HStack(alignment: .top) {
@@ -42,6 +44,7 @@ struct AddTodoView: View {
                             newTodo.dueDate = dueDate
                         }
                         CoreDataController.shared.save()
+                        presentationMode.wrappedValue.dismiss()
                     })
                     .fontWeight(.bold)
                     Spacer()

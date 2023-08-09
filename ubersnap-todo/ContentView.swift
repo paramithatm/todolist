@@ -27,10 +27,12 @@ struct ContentView: View {
                 }.padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 
                 if todos.isEmpty {
+                    // Empty state
                     Text("There's nothing here. Click ➕ on top right corner to add new item")
                         .padding(EdgeInsets(top: 32, leading: 16, bottom: 0, trailing: 16))
                     Spacer()
                 } else {
+                    // Show list of todos
                     List(todos) { todo in
                         NavigationLink {
                             AddTodoView(todo: todo, title: todo.title ?? "", desc: todo.desc ?? "", dueDate: todo.dueDate ?? Date())
