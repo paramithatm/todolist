@@ -12,24 +12,25 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.title),
         SortDescriptor(\.dueDate, order: .reverse)
     ]) var todos: FetchedResults<Todo>
     
     var body: some View {
         NavigationView {
-            List(todos) { todo in
-                Text(todo.title ?? "")
-                    .swipeActions {
-                        Button("Delete") {
-                            print("Boo")
-                        }
-                        .tint(.red)
-                        Button("Update") {
-                            print("bluuu")
-                        }
-                        .tint(.blue)
-                    }
+            List {
+                ForEach(todos) { todo in
+                    Text(todo.title ?? "")
+//                        .swipeActions {
+////                            Button("Delete") {
+////                                print("Boo")
+////                            }
+////                            .tint(.red)
+//                            Button("Update") {
+//                                print("bluuu")
+//                            }
+//                            .tint(.blue)
+//                        }
+                }.onDelete(perform: removeTodo)
             }
             .navigationTitle("To Do List")
             .toolbar {
@@ -41,6 +42,14 @@ struct ContentView: View {
             }
         }
     }
+    
+    func removeTodo(at offsets: IndexSet) {
+        for index in offsets {
+            let todo = todos[index]
+            moc.delete(todo)
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

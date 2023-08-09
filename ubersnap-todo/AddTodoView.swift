@@ -26,9 +26,9 @@ struct AddTodoView: View {
                     DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
                     Button("Submit") {
                         let testData = Todo(context: CoreDataController.shared.container.viewContext)
-                        testData.title = "Laundry"
-                        testData.desc = "One laundry on Wednesday"
-                        testData.dueDate = Date()
+                        testData.title = title
+                        testData.desc = desc
+                        testData.dueDate = dueDate
                         CoreDataController.shared.save()
                     }
                     Spacer()

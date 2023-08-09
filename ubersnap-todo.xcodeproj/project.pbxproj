@@ -14,7 +14,6 @@
 		C24C64C62A82A393000C9300 /* ubsersnap-todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C42A82A393000C9300 /* ubsersnap-todo.xcdatamodeld */; };
 		C24C64C82A82A5DF000C9300 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C72A82A5DF000C9300 /* AddTodoView.swift */; };
 		C24C64CA2A838311000C9300 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64C92A838311000C9300 /* CoreDataController.swift */; };
-		C24C64CC2A838714000C9300 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C64CB2A838714000C9300 /* TodoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		C24C64C52A82A393000C9300 /* ubsersnap-todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ubsersnap-todo.xcdatamodel"; sourceTree = "<group>"; };
 		C24C64C72A82A5DF000C9300 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		C24C64C92A838311000C9300 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		C24C64CB2A838714000C9300 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +64,6 @@
 				C24C64C42A82A393000C9300 /* ubsersnap-todo.xcdatamodeld */,
 				C24C64C92A838311000C9300 /* CoreDataController.swift */,
 				C24C64C72A82A5DF000C9300 /* AddTodoView.swift */,
-				C24C64CB2A838714000C9300 /* TodoModel.swift */,
 			);
 			path = "ubersnap-todo";
 			sourceTree = "<group>";
@@ -152,7 +149,6 @@
 				C24C64CA2A838311000C9300 /* CoreDataController.swift in Sources */,
 				C24C64B92A823D65000C9300 /* ContentView.swift in Sources */,
 				C24C64C62A82A393000C9300 /* ubsersnap-todo.xcdatamodeld in Sources */,
-				C24C64CC2A838714000C9300 /* TodoModel.swift in Sources */,
 				C24C64C82A82A5DF000C9300 /* AddTodoView.swift in Sources */,
 				C24C64B72A823D65000C9300 /* ubersnap_todoApp.swift in Sources */,
 			);
