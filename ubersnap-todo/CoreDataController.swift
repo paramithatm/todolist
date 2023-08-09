@@ -30,7 +30,7 @@ struct CoreDataController {
             do {
                 try context.save()
             } catch {
-                fatalError("Error: Failed to sava changes in core data")
+                fatalError("Error: Failed to save changes in core data")
             }
         }
     }
