@@ -20,17 +20,18 @@ struct ContentView: View {
             List {
                 ForEach(todos) { todo in
                     Text(todo.title ?? "")
-//                        .swipeActions {
-////                            Button("Delete") {
-////                                print("Boo")
-////                            }
-////                            .tint(.red)
-//                            Button("Update") {
-//                                print("bluuu")
-//                            }
-//                            .tint(.blue)
-//                        }
-                }.onDelete(perform: removeTodo)
+                        .swipeActions {
+                            Button("Delete") {
+                                moc.delete(todo)
+                                try? CoreDataController.shared.container.viewContext.save()
+                            }
+                            .tint(.red)
+                            Button("Update") {
+                                
+                            }
+                            .tint(.blue)
+                        }
+                }
             }
             .navigationTitle("To Do List")
             .toolbar {
